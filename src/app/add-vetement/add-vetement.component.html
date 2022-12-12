@@ -1,0 +1,37 @@
+<div class="container">
+    <div>
+    <h2>Ajouter un vetement :</h2>
+    </div>
+    <form >
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+                <label >ID Vetement</label>
+                <input type="text" [(ngModel)]="newVetement.idVetement" name="idVetement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Nom Vetement</label>
+                <input type="text"[(ngModel)]="newVetement.nomVetement" name="nomVetement" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+                <label >Prix Vetement</label>
+                <input type="number" [(ngModel)]="newVetement.prixVetement" name="prixVetement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+                <label >Genre Vetement</label>
+                <input type="text" [(ngModel)]="newVetement.genreVetement" name="genreVetement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Marque</label>
+                <select class="form-control form-control-lg" id="idMarque" name="idMarque" [(ngModel)]="newIdMarque">
+                 <option *ngFor="let mq of marques" [value]="mq.idMarque" >
+                 {{mq.nomMarque}}
+                </option>
+                </select>
+                </div>
+        <div class="mt-2">
+                <button type="submit" (click)="addVetement()"class="btn btn-success">Ajouter</button>
+                <div>
+                        <h3> {{ message }} </h3>
+                </div>
+        </div>
+        </form>
+        </div>
